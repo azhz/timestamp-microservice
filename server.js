@@ -11,6 +11,7 @@ app.use(express.static('client'));
  */
 app.get(/.*/, function(req, res) {
     var dateString = decodeURI(req.url).substr(1);
+	// Access date library
     datelib(dateString, function(err, data) {
         res.end(JSON.stringify(data));
     });
